@@ -1,0 +1,85 @@
+LLM IDENTIFICATION FACTORS
+**********
+OpenAI's GPT-4
+--------------
+Why it's suitable: GPT-4 is one of the most advanced LLMs available, with strong capabilities in understanding context, extracting information, and classifying text. It can handle complex tasks like parsing email bodies, analyzing attachments (if integrated with OCR or file parsing tools), and classifying requests into types or sub-types.
+
+Strengths:
+
+High accuracy in text classification and intent detection.
+
+Can generate structured outputs (e.g., JSON) for service request creation.
+
+Supports fine-tuning or prompt engineering for domain-specific tasks.
+
+Limitations:
+
+Requires integration with external tools for attachment processing (e.g., PDFs, images).
+
+May need careful prompt design to ensure consistent output formats.
+
+2. Anthropic's Claude 2
+--------------------
+Why it's suitable: Claude 2 is designed for enterprise use cases and excels at tasks requiring nuanced understanding and classification of text. It can handle email triage by identifying key information, classifying requests, and generating structured outputs.
+
+Strengths:
+
+Strong performance in understanding long-form text (useful for email bodies).
+
+Can be fine-tuned or used with few-shot learning for specific request types.
+
+Ethical and safe AI design, reducing risks of biased outputs.
+
+Limitations:
+
+Similar to GPT-4, it may require additional tools for attachment processing.
+
+3. Google's PaLM 2
+----------------------
+Why it's suitable: PaLM 2 is optimized for multilingual and multi-modal tasks, making it a good choice if your email triage system needs to handle diverse languages or complex attachments. It can classify emails and generate service requests effectively.
+
+Strengths:
+
+Strong multilingual support.
+
+Can integrate with Google Cloud services for seamless deployment.
+
+Good at handling structured data generation.
+
+Limitations:
+
+May require more setup for domain-specific fine-tuning.
+
+4. Cohere's Command
+-----------------------
+Why it's suitable: Cohere's Command model is designed for enterprise use cases, including text classification and information extraction. It is particularly good at understanding intent and generating structured outputs, making it a strong candidate for email triage.
+
+Strengths:
+
+Optimized for classification and extraction tasks.
+
+Easy to integrate with APIs for automation.
+
+Can handle large-scale email processing efficiently.
+
+Limitations:
+
+May require additional tools for attachment analysis.
+
+5. Hugging Face Transformers (e.g., FLAN-T5, BERT-based models)
+--------------------------------------------------------------
+Why it's suitable: Open-source models like FLAN-T5 or fine-tuned BERT-based models can be customized for email triage tasks. These models are lightweight and can be fine-tuned on your specific dataset for request classification and service request generation.
+
+Strengths:
+
+Highly customizable and cost-effective.
+
+Can be fine-tuned for domain-specific email triage.
+
+Open-source and community-supported.
+
+Limitations:
+
+Requires technical expertise for fine-tuning and deployment.
+
+May not be as powerful as GPT-4 or Claude 2 out-of-the-box.
