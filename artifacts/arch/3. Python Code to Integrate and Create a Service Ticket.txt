@@ -1,0 +1,63 @@
+import requests
+import json
+
+# Define your service request tool API endpoint and authentication (adjust based on the tool you're using)
+API_URL = "https://your-ticketing-system.com/api/v1/tickets"
+API_KEY = "your_api_key_here"  # Use your API key for authentication
+
+# Example of the classification result JSON (as you would get from the model)
+classification_result = {
+    "predicted_label": "Loan",
+    "confidence_score": 0.9243,
+    "request_type": "Loan",
+    "sub_request_type": "Payment Issue",
+    "spam_score": 0.05,
+    "attachment_info": {
+        "pdf_attachment": {
+            "filename": "loan_statement.pdf",
+            "page_count": 3,
+            "extracted_text": "Loan repayment details..."
+        },
+        "image_attachment": {
+            "filename": "invoice.jpg",
+            "image_text": "Invoice details extracted using OCR..."
+        }
+    }
+}
+
+# Function to create a service request ticket
+def create_service_ticket(classification_result):
+    # Prepare the ticket creation payload (based on your ticketing system's API requirements)
+    payload = {
+        "short_description": classification_result["predicted_label"],
+        "description": f"Request Type: {classification_result['request_type']}\n"
+                       f"Sub Request Type: {classification_result['sub_request_type']}\n"
+                       f"Details: {classification_result['attachment_info']}",
+        "request_type": classification_result["request_type"],
+        "sub_request_type": classification_result["sub_request_type"],
+        "spam_score": classification_result["spam_score"],
+        # Optionally, add attachments as URLs or upload them
+        "attachments": [attachment["filename"] for attachment in classification_result["attachment_info"].values()]
+    }
+
+    # Set the headers with API key for authentication
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    # Send the POST request to the ticketing system
+    response = requests.post(API_URL, json=payload, headers=headers)
+
+    # Check if the request was successful
+    if response.status_code == 201:
+        print("Service ticket created successfully!")
+        ticket_id = response.json().get("ticket_id")
+        print(f"Ticket ID: {ticket_id}")
+    else:
+        print(f"Failed to create service ticket. Status code: {response.status_code}")
+        print(response.text)
+
+# Call the function to create the service ticket
+create_service_ticket(classification_result)
+

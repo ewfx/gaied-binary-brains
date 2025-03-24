@@ -42,11 +42,15 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+       pip install -r requirements.txt (for Python)
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+      # running Uvicorn with the module name where your FastAPI app is inside 
+   uvicorn code.src.email_doc_triage:app --reload
+
+   # Swagger 
+   http://127.0.0.1:8000/docs
    ```
 
 ## 🏗️ Tech Stack

@@ -1,0 +1,18 @@
+email_text,request type, subrequest type
+"I am writing to formally notify you regarding the closing of my account and to inquire about the reallocation fees associated with this process","Closting Notice", "reallocation fees"
+"I observed an inconsistency in the specific transaction details, which I believe requires adjustment","Adjustment",
+"I would like to initiate a transfer of funds between my accounts and would appreciate your assistance in processing this request","AU Transfer"
+"I recently noticed a fee labeled as Amendment Fee in my latest statement","Closting Notice","Amendment Fees"
+"After reviewing my financial situation, I would like to transfer a portion of the principal from my current loan/account to another account for better alignment with my financial goals","Closting Notice","Reallocation Principal"
+"I am writing to request a decrease in the charges associated with my account and to discuss my commitment to maintaining a strong relationship with Wells Fargo","Commitmentn Change","Decrease"
+"I am writing to request a change in my account commitment and discuss the possibility of an increase in my [e.g., credit limit, loan amount, deposit rate, etc.] due to my continued loyalty and growing financial needs","Commitmentn Change","increase"
+"I am reaching out to inquire about the ongoing fees associated with my Wells Fargo account. After reviewing my recent statements, I noticed recurring fees that are being applied to my account","Fee Payment","OngoingFee"
+"I am writing to inquire about the Letter of Credit Fee applied to my Wells Fargo account. I recently reviewed my statement and noticed a charge labeled as Letter of Credit Fee.","Fee Payment","Letter of Credit Fee"
+"I would like to move the principal amount from an external source into my account.","Money Movement-inbound","Principal"
+" I would like to have the interest amount from [mention source, e.g., another account, investment, or loan] transferred into my Wells Fargo account","Money Movement-inbound","Interest"
+" I would like to have the principal ane interest amount from [mention source, e.g., another account, investment, or loan] transferred into my Wells Fargo account","Money Movement-inbound","Interest"
+"I would like to initiate a transfer from my Wells Fargo account to the following account in [Country Name]:","Money Movement-outbound","Foreign Currency"
+"Your payment of $1000 is due in 5 days.","payment_due",
+"Congratulations, you have won a prize!","spam",
+"Attached is your monthly statement.","transaction_report",
+"Limited offer on financial services!","marketing",
