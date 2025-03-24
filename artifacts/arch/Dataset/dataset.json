@@ -57,7 +57,7 @@
     {
         "text": "I would like to have the principal and interest amount from [mention source, e.g., another account, investment, or loan] transferred into my Wells Fargo account.",
         "request_type": "Money Movement-inbound",
-        "subrequest_type": "Interest"
+        "subrequest_type": "Principal+Interest"
     },
     {
         "text": "I would like to initiate a transfer from my Wells Fargo account to the following account in [Country Name]:",
