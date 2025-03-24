@@ -1,6 +1,8 @@
 from transformers import BertForSequenceClassification, BertTokenizer
 import torch
 import torch.nn as nn
+from torch.utils.data import Dataset
+from transformers import BertTokenizer
 
 label_map_request = {
     "Adjustment": 0,
@@ -15,16 +17,31 @@ label_map_request = {
 }
 #step 1: Modify the Dataset for Multi-Task Classification
 label_map_sub_request = {
-    "Home Loan": 0,
-    "Personal Loan": 1,
-    "Balance Inquiry": 2,
-    "Details Request": 3,
+    "Reallocation Fees":0, 
+"Amendement Fees":1,
+"Reallocation Principal":2,
+"Cashless Roll":3,
+"Decrease":4,
+"increase":5,
+"Ongoing Fee":6,
+" Letter of Credit Fee":7,
+"Principal":8,
+"Interest":9,
+"Prinicipal+Interest":10
     # More Sub-Request Types...
 }
 
 emails = [
-    "I want to know the status of my home loan application.",
-    "Can I check the balance in my account?"
+"I am writing to formally notify you regarding the closing of my account and to inquire about the reallocation fees associated with this process",
+"I observed an inconsistency in the specific transaction details which I believe requires",
+"I would like to initiate a transfer of funds between my accounts and would appreciate your assistance in processing this request",
+"I recently noticed a fee labeled as Amendment Fee in my latest statement",
+"After reviewing my financial situation, I would like to transfer a portion of the principal from my current loan/account to another account for better alignment with my financial goals",
+"I am writing to request a decrease in the charges associated with my account and to discuss my commitment to maintaining a strong relationship with Wells Fargo",
+"I am writing to request a change in my account commitment and discuss the possibility of an increase in my [e.g., credit limit, loan amount, deposit rate, etc.] due to my continued loyalty and growing financial needs",
+"I am reaching out to inquire about the ongoing fees associated with my Wells Fargo account. After reviewing my recent statements, I noticed recurring fees that are being applied to my account",
+"I am writing to inquire about the Letter of Credit Fee applied to my Wells Fargo account. I recently reviewed my statement and noticed a charge labeled as Letter of Credit Fee.",
+"I would like to move the principal amount from an external source into my account."
 ]
 
 
@@ -57,8 +74,7 @@ class BertForMultiTaskClassification(nn.Module):
 
         return request_logits, sub_request_logits
     #setp 3:  Training the Model
-    from torch.utils.data import Dataset
-from transformers import BertTokenizer
+   
 
 class EmailDataset(Dataset):
     def __init__(self, emails, request_labels, sub_request_labels, tokenizer):
