@@ -1,6 +1,0 @@
-To extract text from PDFs, Word documents, and other attachments, you can use libraries like:
-
-bash
-
-pip install transformers pdfminer.six python-docx pytesseract Pillow
-
