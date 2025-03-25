@@ -10,5 +10,7 @@ pdfminer
 python-docx
 pdfminer.six
 Pillow
-pandas
 accelerate>=0.26.0
+nltk
+together
+PyPDF2
