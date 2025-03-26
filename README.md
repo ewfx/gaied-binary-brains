@@ -22,7 +22,7 @@ AI email triage is an ​​advanced email management approach that uses AI algo
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [artifacts\demo\EmailDocTriageDemoVideo.mp4](#) (if applicable)  
 🖼️ Screenshots:
  ## attached test results code\test\BinaryBrain _TestResultsscreenshots.docx
 
@@ -94,6 +94,7 @@ started with BERT LLM for email classification  and spam detection.
    ```sh
       # go to code/src folder and run below command
       # running Uvicorn with the module name where your FastAPI app is inside 
+   $env:SECRET_TOKEN="token_to_access_api"
    uvicorn email_doc_triage:app --reload
 
    # Swagger 

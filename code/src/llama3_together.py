@@ -2,9 +2,11 @@ import requests
 import json
 import re
 from load_config import categories
+import os
 
+API_SECRET_TOKEN = os.getenv("SECRET_TOKEN", "default-secret")
 API_URL = "https://api.together.xyz/v1/completions"
-HEADERS = {"Authorization": "Bearer 9dc633e600ea616eb32f0b7b786bd0e6cee3a8e390e6e199b0ef5bf1c1b042d8",
+HEADERS = {"Authorization": f"Bearer {API_SECRET_TOKEN}",
            "Content-Type": "application/json"}
 
 # Function to determine urgency level based on keywords
