@@ -75,7 +75,7 @@ started with BERT LLM for email classification  and spam detection.
 ->we were facing finetuning issues.
 ->one of us got space constraint issue as well as were connecting to model () 
 
-*due to time constraints switched to Llama and able to come up with API alone*
+*due to time constraints switched to Llama and able to come up with API*
 
 
 
