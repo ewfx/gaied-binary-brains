@@ -24,6 +24,7 @@ AI email triage is an ​​advanced email management approach that uses AI algo
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
+ ## attached test results code\test\BinaryBrain _TestResultsscreenshots.docx
 
 ![Screenshot 1](link-to-image)
 

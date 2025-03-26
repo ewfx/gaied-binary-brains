@@ -12,3 +12,5 @@ executed following test cases with the api we have developed.
    use uploads/loan_application.eml
 -upload .eml with attachment
     use uploads/loan_application_with_attachments.eml
+
+    ## attached test results code\test\BinaryBrain _TestResultsscreenshots.docx
