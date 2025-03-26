@@ -4,7 +4,7 @@ from docx import Document  # python-docx for DOCX files
 from email import policy
 from email.parser import BytesParser
 
-# Function to read EML file and extract content
+# Function to read EML file and extract content along with attachments
 def read_eml_file(file_path):
     with open(file_path, "rb") as f:
         msg = BytesParser(policy=policy.default).parse(f)

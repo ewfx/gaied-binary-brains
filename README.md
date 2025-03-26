@@ -18,6 +18,8 @@ Binary Brains Team: GENAI-EMAIL-TRAIAGE
 
 AI email triage is an ​​advanced email management approach that uses AI algorithms to categorize and prioritize incoming emails. Unlike traditional email management methods that rely on manual sorting and filtering, AI email triage automates the process by learning from historical data and user behavior and training AI models to do the same.
 
+
+
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
@@ -36,10 +38,33 @@ Binary Brains Team: GENAI-EMAIL-TRAIAGE
 
 
 Acheived:
-=> we have come up with an API wchi Accepts email in different formats (.pdf/.doc/.eml) along with attachments (.pdf/.doc) as  an input and returns "JSON" having classification details such as request type/ sub request type/ confidence score/ urgency/ key word identification details information as parameters 
+=> we have come up with an API wchi Accepts email in different formats (.pdf/.doc/.eml) along with attachments (.pdf/.doc) as  an input and returns "JSON" having classification details such as 
+   -request type
+   -sub request type
+   -confidence score
+   -urgency
+   -keyPhrases
+  details  as attributes
+
+=> with the results we can determine 
+   -improtance of email using "urgency" attribute 
+   -classify email based on "request type" and "sub request type" 
+   -can create "service reqeust" ticket based on "confidence score"
+
+=>we can enhance requesttype and sub request type in future through configuration provided.
+
+Limitations:
+scope for scaling it to "service reqeuest generation tool" ingegration to create tickets.
 
 ## 🛠️ How We Built It
 
+step 1: API will take the input file ( .docx/.pdf/.txt/.eml) ( email_Doc_triage.py)
+step 2: Data preprocessing
+         -Cleans and preprocesses email text for better model performance 
+         -part of performing  data preprocessing we are doing cleaning of text ( predictor.py) and lemmetization(preproocess.py) using nltk
+step 3: connect to LLAMA3  api using together API platform and perform email classification by
+         -reading content from uploaded file (.eml/.pdf/.docx/.txt) 
+         -along with attachment (.pdf/.docx/.txt) 
 
 
 
@@ -47,10 +72,11 @@ Acheived:
 started with BERT LLM for email classification  and spam detection.
 
 ->we were facing finetuning issues.
-->one of us got space constraint as were connecting to model () space issues)
+->one of us got space constraint issue as well as were connecting to model () 
 
 *due to time constraints switched to Llama and able to come up with API alone*
-scope for scaling it to service management tool ingegration to create tickets.
+
+
 
 
 ## 🏃 How to Run
