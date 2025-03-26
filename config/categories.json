@@ -2,7 +2,7 @@
 {
   "loan services": {
     "application": ["new loan", "refinancing"],
-    "inquiry": ["loan status", "eligibility"]
+    "Enquiry": ["loan status", "eligibility"]
   },
   "payment services": {
     "billing": ["due date", "late payment", "overdue"],
