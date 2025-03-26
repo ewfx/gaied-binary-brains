@@ -1,0 +1,36 @@
+import PyPDF2
+
+#extract from pdf
+def extract_pdf_content(pdf_path):
+    with open(pdf_path, 'rb') as file:
+        reader = PyPDF2.PdfReader(file)
+        text = ""
+        
+        # Loop through each page and extract text
+        for page_num in range(len(reader.pages)):
+            page = reader.pages[page_num]
+            text += page.extract_text()
+        
+    return text
+#extract from doucment
+from docx import Document
+
+def extract_docx_content(docx_path):
+    doc = Document(docx_path)
+    text = ""
+    
+    # Loop through each paragraph in the document and extract the text
+    for para in doc.paragraphs:
+        text += para.text + '\n'
+    
+    return text
+
+# Usage example
+docx_path = 'your_document.docx'  # Replace with the path to your .docx file
+content = extract_docx_content(docx_path)
+print(content)
+
+# Usage example
+pdf_path = 'your_pdf_file.pdf'  # Replace with the path to your PDF file
+content = extract_pdf_content(pdf_path)
+print(content)

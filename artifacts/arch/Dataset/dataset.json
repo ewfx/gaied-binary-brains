@@ -1,0 +1,87 @@
+[
+    {
+        "text": "I am writing to formally notify you regarding the closing of my account and to inquire about the reallocation fees associated with this process.",
+        "request_type": "Closing Notice",
+        "subrequest_type": "Reallocation Fees"
+    },
+    {
+        "text": "I observed an inconsistency in the specific transaction details, which I believe requires adjustment.",
+        "request_type": "Adjustment",
+        "subrequest_type": ""
+    },
+    {
+        "text": "I would like to initiate a transfer of funds between my accounts and would appreciate your assistance in processing this request.",
+        "request_type": "AU Transfer",
+        "subrequest_type": ""
+    },
+    {
+        "text": "I recently noticed a fee labeled as Amendment Fee in my latest statement.",
+        "request_type": "Closing Notice",
+        "subrequest_type": "Amendment Fees"
+    },
+    {
+        "text": "After reviewing my financial situation, I would like to transfer a portion of the principal from my current loan/account to another account for better alignment with my financial goals.",
+        "request_type": "Closing Notice",
+        "subrequest_type": "Reallocation Principal"
+    },
+    {
+        "text": "I am writing to request a decrease in the charges associated with my account and to discuss my commitment to maintaining a strong relationship with Wells Fargo.",
+        "request_type": "Commitment Change",
+        "subrequest_type": "Decrease"
+    },
+    {
+        "text": "I am writing to request a change in my account commitment and discuss the possibility of an increase in my [e.g., credit limit, loan amount, deposit rate, etc.] due to my continued loyalty and growing financial needs.",
+        "request_type": "Commitment Change",
+        "subrequest_type": "Increase"
+    },
+    {
+        "text": "I am reaching out to inquire about the ongoing fees associated with my Wells Fargo account. After reviewing my recent statements, I noticed recurring fees that are being applied to my account.",
+        "request_type": "Fee Payment",
+        "subrequest_type": "Ongoing Fee"
+    },
+    {
+        "text": "I am writing to inquire about the Letter of Credit Fee applied to my Wells Fargo account. I recently reviewed my statement and noticed a charge labeled as Letter of Credit Fee.",
+        "request_type": "Fee Payment",
+        "subrequest_type": "Letter of Credit Fee"
+    },
+    {
+        "text": "I would like to move the principal amount from an external source into my account.",
+        "request_type": "Money Movement-inbound",
+        "subrequest_type": "Principal"
+    },
+    {
+        "text": "I would like to have the interest amount from [mention source, e.g., another account, investment, or loan] transferred into my Wells Fargo account.",
+        "request_type": "Money Movement-inbound",
+        "subrequest_type": "Interest"
+    },
+    {
+        "text": "I would like to have the principal and interest amount from [mention source, e.g., another account, investment, or loan] transferred into my Wells Fargo account.",
+        "request_type": "Money Movement-inbound",
+        "subrequest_type": "Principal+Interest"
+    },
+    {
+        "text": "I would like to initiate a transfer from my Wells Fargo account to the following account in [Country Name]:",
+        "request_type": "Money Movement-outbound",
+        "subrequest_type": "Foreign Currency"
+    },
+    {
+        "text": "Your payment of $1000 is due in 5 days.",
+        "request_type": "Payment Due",
+        "subrequest_type": ""
+    },
+    {
+        "text": "Congratulations, you have won a prize!",
+        "request_type": "Spam",
+        "subrequest_type": ""
+    },
+    {
+        "text": "Attached is your monthly statement.",
+        "request_type": "Transaction Report",
+        "subrequest_type": ""
+    },
+    {
+        "text": "Limited offer on financial services!",
+        "request_type": "Marketing",
+        "subrequest_type": ""
+    }
+]

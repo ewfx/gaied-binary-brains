@@ -49,7 +49,7 @@ Describe the major technical or non-technical challenges your team encountered.
    ```sh
       # go to code/src folder and run below command
       # running Uvicorn with the module name where your FastAPI app is inside 
-   uvicorn code.email_doc_triage:app --reload
+   uvicorn email_doc_triage:app --reload
 
    # Swagger 
    http://127.0.0.1:8000/docs
