@@ -1,0 +1,15 @@
+
+{
+  "loan services": {
+    "application": ["new loan", "refinancing"],
+    "inquiry": ["loan status", "eligibility"]
+  },
+  "payment services": {
+    "billing": ["due date", "late payment", "overdue"],
+    "refund": ["overpayment", "cancelled loan"],
+    "money movement-inbound": ["principal", "interest"],
+    "money movement-outbound": ["foreign currency"],
+    "fee payment": ["ongoingfee", "letter of credit fee"],
+    "closting notice": ["reallocation fees","amendment fees","reallocation principal"]
+  }
+}
