@@ -38,23 +38,28 @@ Describe the major technical or non-technical challenges your team encountered.
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/ewfx/gaied-binary-brains.git
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+      #Run below command to install all required libraries from project root folder
+       pip install -r requirements.txt (for Python)
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+      # go to code/src folder and run below command
+      # running Uvicorn with the module name where your FastAPI app is inside 
+   uvicorn code.email_doc_triage:app --reload
+
+   # Swagger 
+   http://127.0.0.1:8000/docs
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: API (Swagger docs, postman etc.,)
+- 🔹 Backend: FastAPI, uvicorn
+- 🔹 Other: LLAMA3 using together API platform
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- **Yamini Pinapatruni** - [yamini-pinapatruni](#) 
+- **Divya Ambati** - [divzkala](#) 

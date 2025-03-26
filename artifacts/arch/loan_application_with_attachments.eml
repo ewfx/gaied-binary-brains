@@ -1,0 +1,36 @@
+From: customer@example.com
+To: loans@bank.com
+Subject: Loan Application Submission
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3401102943628209467=="
+
+--===============3401102943628209467==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+Dear Loan Officer,
+
+I am submitting my loan application for review. Please find attached the requ=
+ired documents.
+
+Best regards,
+John Doe
+
+--===============3401102943628209467==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="sample_document.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQgU2FtcGxlIFBERiBjb250ZW50IGZvciBMb2FuIEFwcGxpY2F0aW9u
+
+--===============3401102943628209467==
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="sample_document.docx"
+MIME-Version: 1.0
+
+U2FtcGxlIERPQ1ggY29udGVudCBmb3IgTG9hbiBBcHBsaWNhdGlvbg==
+
+--===============3401102943628209467==--

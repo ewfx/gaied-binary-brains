@@ -1,0 +1,40 @@
+From: mark.taylor@companyxyz.com
+To: support@bankingservice.com
+Subject: Payment Error – Incorrect Amount Charged (Proof Attached)
+Date: Fri, 21 Mar 2025 15:00:00 -0500
+Message-ID: <20250321150000.12345678@companyxyz.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_string_1234"
+
+--boundary_string_1234
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+Dear Customer Support,
+
+I hope this message finds you well.
+
+I am writing to inform you that I encountered an issue with my recent loan payment. I was charged an incorrect amount for my loan repayment due on March 15th, 2025. The amount deducted from my account is $1,500, which is significantly higher than the agreed repayment amount of $1,200.
+
+I have attached a PDF document as proof of the payment details, including the transaction record from my bank and the payment confirmation for your reference. Please review the attached file and kindly assist me in resolving this issue at your earliest convenience.
+
+Could you confirm whether the correct payment amount has been processed or if there was an error on your end? I would appreciate it if you could provide me with a resolution or next steps for correcting this discrepancy.
+
+Thank you for your prompt attention to this matter. I look forward to your reply.
+
+Best regards,  
+Mark Taylor  
+Senior Account Manager  
+Company XYZ  
+Email: mark.taylor@companyxyz.com  
+Phone: +1 (123) 456-7890
+
+--boundary_string_1234
+Content-Type: application/pdf; name="Payment_Error_Proof.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Payment_Error_Proof.pdf"
+
+<BASE64_ENCODED_CONTENT_OF_PDF>
+
+--boundary_string_1234--
+

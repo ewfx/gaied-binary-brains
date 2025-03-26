@@ -1,0 +1,39 @@
+from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
+from datasets import load_dataset
+
+# Load the dataset (assumes a dataset in a CSV format with 'text' and 'label' columns)
+dataset = load_dataset('csv', data_files={'train': 'train.csv', 'test': 'test.csv'})
+
+# Tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+def tokenize_function(examples):
+    return tokenizer(examples['text'], padding='max_length', truncation=True)
+
+# Apply tokenization to the dataset
+tokenized_datasets = dataset.map(tokenize_function, batched=True)
+
+# Load the model
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+
+# Training arguments
+training_args = TrainingArguments(
+    output_dir='./results',          # output directory
+    evaluation_strategy="epoch",     # evaluation strategy to adopt during training
+    learning_rate=2e-5,              # learning rate
+    per_device_train_batch_size=16,  # batch size for training
+    per_device_eval_batch_size=64,   # batch size for evaluation
+    num_train_epochs=3,              # number of training epochs
+    weight_decay=0.01,               # strength of weight decay
+)
+
+trainer = Trainer(
+    model=model,                         # the instantiated 🤗 transformers model to be trained
+    args=training_args,                  # training arguments, defined above
+    train_dataset=tokenized_datasets['train'],         # training dataset
+    eval_dataset=tokenized_datasets['test'],           # evaluation dataset
+)
+
+# Train the model
+trainer.train()
+

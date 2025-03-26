@@ -1,0 +1,131 @@
+Install Necessary Libraries:
+**********************
+pip install transformers datasets torch
+
+Fine-tune Spam Classification (BERT for Spam Detection):
+***************************************
+from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
+from datasets import load_dataset
+import torch
+
+# Load a sample dataset (replace with your dataset)
+dataset = load_dataset('sms_spam')  # Replace with your custom spam/ham dataset
+
+# Initialize tokenizer and model
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+
+# Tokenization function
+def tokenize_function(examples):
+    return tokenizer(examples['text'], padding='max_length', truncation=True)
+
+# Apply tokenization to the dataset
+tokenized_datasets = dataset.map(tokenize_function, batched=True)
+
+# Training arguments
+training_args = TrainingArguments(
+    output_dir='./results',
+    evaluation_strategy="epoch",
+    learning_rate=2e-5,
+    per_device_train_batch_size=16,
+    per_device_eval_batch_size=64,
+    num_train_epochs=3,
+    weight_decay=0.01,
+)
+
+# Initialize the trainer
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_datasets['train'],
+    eval_dataset=tokenized_datasets['test'],
+)
+
+# Fine-tune the model
+trainer.train()
+trainer.save_model('./spam_email_model')
+
+
+ Classify Email Content for Request Type and Sub-Request Type:
+************************************************************
+
+from transformers import BertTokenizer, BertForSequenceClassification
+import torch
+import json
+
+# Load fine-tuned spam classifier
+spam_model = BertForSequenceClassification.from_pretrained('./spam_email_model')
+spam_tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+# Function to classify email as spam or ham
+def is_spam(email_subject, email_body):
+    email_content = email_subject + "\n" + email_body
+    inputs = spam_tokenizer(email_content, return_tensors="pt", truncation=True, padding=True)
+    with torch.no_grad():
+        outputs = spam_model(**inputs)
+        logits = outputs.logits
+        prediction = torch.argmax(logits, dim=-1).item()
+    return prediction == 1  # Returns True for spam
+
+# Request Type and Sub-Request Type Classification Model (BERT fine-tuned for classification)
+request_type_model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=3)  # Example: 3 request types
+sub_request_type_model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=5)  # Example: 5 sub-request types
+
+# Tokenizer for classification models
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+# Function to classify request type and sub-request type
+def classify_request_type_and_sub_request_type(email_subject, email_body):
+    email_content = email_subject + "\n" + email_body
+    inputs = tokenizer(email_content, return_tensors="pt", truncation=True, padding=True)
+
+    # Request type classification (3 types: Payment, Account, Loan)
+    with torch.no_grad():
+        outputs = request_type_model(**inputs)
+        logits = outputs.logits
+        request_type_prediction = torch.argmax(logits, dim=-1).item()
+    
+    # Sub-request type classification (e.g., 5 types for Payment: Late, Inquiry, etc.)
+    with torch.no_grad():
+        outputs = sub_request_type_model(**inputs)
+        logits = outputs.logits
+        sub_request_type_prediction = torch.argmax(logits, dim=-1).item()
+
+    # Map predictions to request types and sub-request types
+    request_types = ["Payment", "Account", "Loan"]
+    sub_request_types = ["Late Payment", "Balance Inquiry", "Loan Approval", "Refund Request", "Other"]
+
+    return request_types[request_type_prediction], sub_request_types[sub_request_type_prediction]
+
+# Function to classify email, filter spam, and create a service request
+def classify_and_create_service_request(email_subject, email_body, sender_email):
+    # Check if the email is spam
+    if is_spam(email_subject, email_body):
+        return "Spam email detected. No action required."
+    
+    # Classify the email into request type and sub-request type
+    request_type, sub_request_type = classify_request_type_and_sub_request_type(email_subject, email_body)
+    
+    # Create a service request if the email is valid (not spam)
+    service_request = {
+        "sender_email": sender_email,
+        "subject": email_subject,
+        "request_type": request_type,
+        "sub_request_type": sub_request_type,
+        "email_body": email_body,
+        "status": "Pending",
+        "priority": "High"
+    }
+
+    # Return the generated service request
+    return json.dumps(service_request, indent=4)
+
+# Example email to classify
+email_subject = "Issue with my payment"
+email_body = "Dear Support, I encountered a problem with my loan payment. It's delayed and I need assistance."
+sender_email = "customer@companyxyz.com"
+
+# Classify email and generate service request
+service_request = classify_and_create_service_request(email_subject, email_body, sender_email)
+print(service_request)
+

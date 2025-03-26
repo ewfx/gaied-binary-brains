@@ -1,0 +1,73 @@
+import base64
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import os
+
+def generate_eml_with_pdf(subject, body, sender, recipient, pdf_path, eml_filename):
+    # Create the email message object
+    msg = MIMEMultipart()
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
+    
+    # Attach the body of the email as plain text
+    msg.attach(MIMEText(body, 'plain'))
+    
+    # Open the PDF file and read its content
+    with open(pdf_path, 'rb') as file:
+        pdf_content = file.read()
+
+    # Encode the PDF in base64
+    pdf_base64 = base64.b64encode(pdf_content).decode()
+
+    # Create the PDF attachment MIME object
+    pdf_attachment = MIMEBase('application', 'pdf')
+    pdf_attachment.set_payload(pdf_base64)
+    encoders.encode_base64(pdf_attachment)
+
+    # Add necessary headers for the attachment
+    filename = os.path.basename(pdf_path)
+    pdf_attachment.add_header('Content-Disposition', f'attachment; filename="{filename}"')
+
+    # Attach the PDF to the email message
+    msg.attach(pdf_attachment)
+
+    # Write the email content to an .eml file
+    with open(eml_filename, 'w') as eml_file:
+        eml_file.write(msg.as_string())
+
+    print(f"EML file with PDF attachment has been generated: {eml_filename}")
+
+# Example usage:
+subject = "Payment Error – Incorrect Amount Charged (Proof Attached)"
+body = """
+Dear Customer Support,
+
+I hope this message finds you well.
+
+I am writing to inform you that I encountered an issue with my recent loan payment. I was charged an incorrect amount for my loan repayment due on March 15th, 2025. The amount deducted from my account is $1,500, which is significantly higher than the agreed repayment amount of $1,200.
+
+I have attached a PDF document as proof of the payment details, including the transaction record from my bank and the payment confirmation for your reference. Please review the attached file and kindly assist me in resolving this issue at your earliest convenience.
+
+Could you confirm whether the correct payment amount has been processed or if there was an error on your end? I would appreciate it if you could provide me with a resolution or next steps for correcting this discrepancy.
+
+Thank you for your prompt attention to this matter. I look forward to your reply.
+
+Best regards,  
+Mark Taylor  
+Senior Account Manager  
+Company XYZ  
+Email: mark.taylor@companyxyz.com  
+Phone: +1 (123) 456-7890
+"""
+
+sender = "mark.taylor@companyxyz.com"
+recipient = "support@bankingservice.com"
+pdf_path = "Payment_Error_Proof.pdf"  # Path to the PDF document you want to attach
+eml_filename = "payment_error_email.eml"  # Output EML filename
+
+# Generate the EML file with PDF attachment
+generate_eml_with_pdf(subject, body, sender, recipient, pdf_path, eml_filename)
+
