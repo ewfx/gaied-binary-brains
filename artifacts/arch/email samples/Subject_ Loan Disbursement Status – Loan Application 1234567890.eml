@@ -1,0 +1,123 @@
+Delivered-To: kala.rose2@gmail.com
+Received: by 2002:a05:7108:9f46:b0:402:6fdc:3351 with SMTP id mk6csp2771626gdb;
+        Wed, 26 Mar 2025 00:45:47 -0700 (PDT)
+X-Received: by 2002:a05:622a:5c88:b0:476:83d6:75ea with SMTP id d75a77b69052e-4771dd7b5a3mr288234781cf.15.1742975147336;
+        Wed, 26 Mar 2025 00:45:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742975147; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fVxDEIb5I/+rAgGmk9L4P+1wRw03v6YYZAh9/XSZzV7GuL5q7pBhSe3TRwtysYMMEM
+         sht4R/xmQxosCQD423WfY9K/RC7FIUEBWTl5Qg7C8tsVyfNiHmvqpeg67lQNaVQNaI5B
+         tdK/lifQeDZ76zrRegm0M+AsXGGY6F6r7eVL4+qhCHQiV+bY8dhyysyk/2kSSP/56KE+
+         1ERt54LTQuWXZGTcqpj3wr5I7cn2rhtym1peCpvH493YvJVnR0NYL5Z0PNCC4znWIejy
+         SEKI0RVX+v9WfLFsv20wDQDtBikz7ZQz8UE+z1Ul4VK5vIbWKe4f/QRtpDduO70Cfa+9
+         o0uw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=lSTN++Y6R118wGtGXWRQ1SSxy9NL7giQPHfm/LSmDKU=;
+        fh=ChtLNO6yL9eK/GIjE0GuVk6QzYBbLd51TcfFO6NDXoo=;
+        b=UgpGSvRdm2WXlVFdGscXq0j0U0R5BF6bV6DMWY/oEi8KyCl3ejT7T6KXgHyRjjyd3R
+         mhqjDAQSYKoLxihoJS+aBAupempE2tACehlt5PUZpbzTcHYNyTPuzxFskRBskTOYkWx1
+         fekObYoXGnoqCMVi25XsE0TXKKDnSPNHW0RzI6q66RJROCp0TwkQTZnrWemHzgq60KJA
+         UJFItyYpf1dsyC8s+w4vglBhTgvjY057w6IvnkCOk+yJ4qb4Sv7kORwuRLrQUuG86QMO
+         1gJWOtutHGCULKaGGJRqgshOU9ezgiGjExqb2Wu3KEMankmyEVDdU5rwmDI28H64KUgs
+         XIGA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=cYyswJNg;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <saipraveen.a.iiit@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4771d13842csor122881781cf.2.2025.03.26.00.45.47
+        for <kala.rose2@gmail.com>
+        (Google Transport Security);
+        Wed, 26 Mar 2025 00:45:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=cYyswJNg;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742975147; x=1743579947; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=lSTN++Y6R118wGtGXWRQ1SSxy9NL7giQPHfm/LSmDKU=;
+        b=cYyswJNguXdWGroHIo22V9/o5cSY4Ms8vB04fzJiaW3q+HUDFeA2bA7oXKXyqzQXO4
+         xiEyZEQ5jHf5epfLqe2/8x/gIIuTrodqNx6Q2o5RQDOxDDQoHxW+DLDgCMSEnKaztuOH
+         YQSYMrcHKZNbEPhhW2W+wvT5rAQWwz8X2mTKkHqnhOASsw7r3kiX59s9huFx0dFMNq7O
+         ybrZrl+sf9UYgofoXl1uOJ2g9quxI+f0Ze5Jwxy5lzB4REat4Lhb0pDq1DhPLk3okGBh
+         zc0qJUjnRm3fHNBnWddLEUznz6M8v5ois1hw3k3k00OcS1yKozoJpTxAQOebUodLiCYV
+         YQFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742975147; x=1743579947;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=lSTN++Y6R118wGtGXWRQ1SSxy9NL7giQPHfm/LSmDKU=;
+        b=rw+3kEOwmsdEISJ/0TkTOQRxHXfY7O3nAgJzkt6Zv6lyjHudEUYRYeAxR+GSD+SLP3
+         M8PI+DFideuGma1qmfnAYR2T4rKwBXl1zMnQ1mlBxX5pngClIji9paYAFFwg+0R3Bu76
+         9tiN+szNQQqU7nC2J112qj+vN9VxV+f9MhXwatMwsUrHJlUQRQ5cAE6lZ5ghMBwjTmA1
+         k36q7zZw8kiV7MSKpKlrL4Q3ItTooMa7dP/ZJ5YtzAX9ZchG88EjKRL/pXuhxYHN4Fa+
+         BdFlueDjkn2ZG4d4hDJlQuY5hFYSe9qhvTWSk1efRULb4FbYahjUGCxL3WW1vPOWTr1B
+         Zhgg==
+X-Gm-Message-State: AOJu0Yylw1uyp8JcfWdL7h594pxfLYtA9oOhRdn24eWqgxWPWJeD/eE7
+	ZhcZ+t2/kK/lHKZfAMQdC9rhIuk/wYJl91tTDDVoECjey8pDo4co/VHlkeQh8ugej8aEbJABT0Y
+	jRmcCGNbuRGRax5a9DUVbhEGFAxe082qH3hI=
+X-Gm-Gg: ASbGnctZkevhTiQQwbrisdrDIwTEbHtPcAxA7HYNP3D28xvSTupBGAPd6bXlHv2fDhl
+	waPsOI1W4OwDB9A8MoHCFFZ2QT22jnxP3JGwcYIzUFxFtqKZh6LhjytU3OYry0RaobMEA8DpTCi
+	gRRyMFltSFutshd+vhYSmP/PZUZZvNlb8TSTEIJVohP9YBatSIomRmLdJx1Q==
+X-Google-Smtp-Source: AGHT+IH5TY4nqxb/HZMZEj2R9Kuz8xT16Ks6sduSOgJmWHH1lnJNHY3k2nQssFLTP8vjT4sddO0akxylyF/yuEFFo3U=
+X-Received: by 2002:ac8:6909:0:b0:476:8cad:72dc with SMTP id
+ d75a77b69052e-4771dd60875mr325024561cf.2.1742975146572; Wed, 26 Mar 2025
+ 00:45:46 -0700 (PDT)
+MIME-Version: 1.0
+From: Sai Praveen <saipraveen.a.iiit@gmail.com>
+Date: Wed, 26 Mar 2025 13:15:35 +0530
+X-Gm-Features: AQ5f1Jo61VOtAHFL3a-SDheioW4KtzIt8SyaYmVcBG1kW4_lR439O9ahTcAzxA8
+Message-ID: <CACyWkX4erFypKqib4+E+RxnDEf2zsG3SfyMCZsPyeaFO9eSb0w@mail.gmail.com>
+Subject: =?UTF-8?Q?Subject=3A_Loan_Disbursement_Status_=E2=80=93_Loan_Applicati?=
+	=?UTF-8?Q?on_1234567890?=
+To: Divya Kala <kala.rose2@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000076c05c06313a0621"
+
+--00000000000076c05c06313a0621
+Content-Type: text/plain; charset="UTF-8"
+
+*Dear HDFC Bank,*
+
+I recently applied for a personal loan, and I would like to check the
+status of the disbursement.
+
+   -
+
+   *Loan Application Number:* 1234567890
+   -
+
+   *Date of Application:* 10th March 2024
+
+Kindly update me on the expected timeline for disbursement.
+
+Best Regards,
+*Arun Sharma*
++91 99988 77665
+
+--00000000000076c05c06313a0621
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><p class="gmail-"><strong>Dear HDFC Bank,</strong></p>
+<p class="gmail-">I recently applied for a personal loan, and I would like to check the status of the disbursement.</p>
+<ul>
+<li class="gmail-">
+<p class="gmail-"><strong>Loan Application Number:</strong> 1234567890</p>
+</li>
+<li class="gmail-">
+<p class="gmail-"><strong>Date of Application:</strong> 10th March 2024</p>
+</li>
+</ul>
+<p class="gmail-">Kindly update me on the expected timeline for disbursement.</p>
+<p class="gmail-">Best Regards,<br>
+<strong>Arun Sharma</strong><br>
++91 99988 77665</p></div>
+
+--00000000000076c05c06313a0621--

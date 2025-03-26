@@ -1,0 +1,120 @@
+Delivered-To: kala.rose2@gmail.com
+Received: by 2002:a05:7108:9f46:b0:402:6fdc:3351 with SMTP id mk6csp2771715gdb;
+        Wed, 26 Mar 2025 00:46:05 -0700 (PDT)
+X-Received: by 2002:a05:622a:5a12:b0:472:1f07:7a9 with SMTP id d75a77b69052e-4771dde854cmr397941541cf.31.1742975164861;
+        Wed, 26 Mar 2025 00:46:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742975164; cv=none;
+        d=google.com; s=arc-20240605;
+        b=hTDpO7/yiYB2uAg8ItASggJzp9LugV4th5jer6X2cDAlKHPSu+HAxHPMRcAglwuWb7
+         nwGiA4g6CQJ3vhda9VqWD8HmdVat4NPUj0v6EhkTF9htjI16OB/QjOIdcRen89Fu6mjc
+         eEikwPWOuMcron1Dhr4yaiOURvE/xT7SRGS6rJftuq5Sy8DwOzwTP/KglzxHh5/niZEY
+         CUBcp0mLt2JUfguQhiYUg8yRYCanHHqFblgRJC9JnO1GtR+YSo/WQzPoguOtPPvnoTKx
+         Y0Jjz2HMNcEYCBcHgcPMBUlfvgD+vSuxeiUbcYmzVgaoeO1Xf4hu06V/ygQAV5TNGwAk
+         bj7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=WzR+EABaM3TZO6fJSr9bN57BxvUMSr1iM2kZ6FonAls=;
+        fh=ChtLNO6yL9eK/GIjE0GuVk6QzYBbLd51TcfFO6NDXoo=;
+        b=JP+1drZnafDK/Ux6sVmRnZV+jpCxBXJG3vTQ8+/aePc7mFEF7todRfv46G3RAFpxDb
+         VUXnrbN0hJ82bKsr/qhC/15nIcCT64P0JA5sozV7bWA8MZZs+vDtVrvkyhtW7p6EZ/Zb
+         9edyZncOzZc2PTNgXqt81eljUo8GjC0tSLfrzRrRV5XxkZUBwHoeIZ8g3WQVAGfU5hlT
+         IG8KU0awt7EnRgL9slK7/41gS7gfUV9dQ8oZnMLVy4vY+ugpIkw65QG9UNgCB2z6U+RV
+         YoRiic31SHHw7xtqv0JvdYyI758EFVDRMJwVHCTikNwdcfBnCkjiIumJgiXGH3bJXUzy
+         ofpQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=dHZ76hF0;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <saipraveen.a.iiit@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4771d1906b9sor170204361cf.7.2025.03.26.00.46.04
+        for <kala.rose2@gmail.com>
+        (Google Transport Security);
+        Wed, 26 Mar 2025 00:46:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=dHZ76hF0;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742975164; x=1743579964; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=WzR+EABaM3TZO6fJSr9bN57BxvUMSr1iM2kZ6FonAls=;
+        b=dHZ76hF028AEczXxPgl75dUluTc7njavEutV9KlnDM953A8GZT860KnrLgfMAO8KKg
+         hHn57fvSusGGyMDah4n5MvEkgzhhlJ1QUaAieZgNrV4w0bcBsY20gmO2jIcTRYEAySVN
+         b+vqQn/ev62279J50hwGbuPT2R9wIMFl1UJ7XSbDmILWTK8NjTdWGiHTN/0PMQrWbXvP
+         IHuLdduVwkvJQyc1uDyS3xVyIvG6bKdOTcWdnqf6WmraEsXwxU30s55dVJIZN7eCxpvQ
+         cDfedRZfOJo8mKDocxzcINvE/IOrQIkc+LQRHR0sgECtlJ92hZGO7tzGAg6Sh1KQkOgA
+         moxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742975164; x=1743579964;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=WzR+EABaM3TZO6fJSr9bN57BxvUMSr1iM2kZ6FonAls=;
+        b=n0IoRMBw6d/v71pXiedvVm6eF7FNPf/jnFh0krpb4fMnOmY6qFwJI9Ys661Gk0NIXH
+         6hC5Jj+XnM+u700ixmfLLNsAsVms5h5ea9l0l8ZChvkMhcdEcQIVkPxyEAPggOuVSywK
+         xIAGgL43cZgqDhVRtTcMdvsJo1V/eURYtQvRYdYxgVu6SeZN6khNHh0iDczrcyVdYxKm
+         BFvDMOv23CDqmDuV74/4+njt9Yo835MmPQj7wC+MKeXWtkjVVvw/mYKgMo1v3AhpADq2
+         tWuIcHr8kVCCE8HU2Qx4r/+TlXV+TgjohB4hCQwr71MAQ2yGmeZfOflPKIiJsFoiDBbB
+         s8pg==
+X-Gm-Message-State: AOJu0YyPaoOrkV7IG8d8HHvv3Z7MU66Juy9YDsgMc6IkAZaJh7vG/+2/
+	PXhUGUfrkK6dRa7XHyGT2f7Nap7auJYFvr46m0LDXM3oMdDAyg1m1eJH3LHlmQsPaCQYBefe0Xo
+	y33+rhpAXDdIhjN4R9khy48tV+4k5NVGO5ok=
+X-Gm-Gg: ASbGncsbkM/Nt2HPsLG+Rh47Maf4YpjdHXQjcNno6MxsZ6dDxc6XSucWC3xKEgloyBa
+	w1XHeIokcsrX+1D2gx5Z93pCaUhCXkWGj1Ij9GSwdZHQTSse0WF9CcwNlNSyt4+9PyrDU2px6J1
+	t3GBJHd2VF+OuEYkL9jsoMDBJyfObov5hy4ZM+re4TdookmXUW50FPlGd3Uw==
+X-Google-Smtp-Source: AGHT+IFBiU+ZafB3Vwb9ryReRow2Wt2ldiWrAyjZFg/WS/8RI+hJwQScOQY1iYZxxnPlOPAIZ7RU7CWnkcx81hNnHgI=
+X-Received: by 2002:a05:622a:5587:b0:476:87f6:3ce4 with SMTP id
+ d75a77b69052e-4771de5ce5bmr328433531cf.39.1742975164085; Wed, 26 Mar 2025
+ 00:46:04 -0700 (PDT)
+MIME-Version: 1.0
+From: Sai Praveen <saipraveen.a.iiit@gmail.com>
+Date: Wed, 26 Mar 2025 13:15:53 +0530
+X-Gm-Features: AQ5f1JoMKfDeNMpO09IXOdxWnNJd7QQhdLuONh0j0PliWPgNUptns_8IRls95U4
+Message-ID: <CACyWkX4RAF4DR+2SrWahFzoAc+fVJtM4jxhGTQZ9G33c-0Buqg@mail.gmail.com>
+Subject: =?UTF-8?Q?Subject=3A_Request_for_NOC_=E2=80=93_Closed_Loan_Account_556?=
+	=?UTF-8?Q?6778899?=
+To: Divya Kala <kala.rose2@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000081fa6b06313a0701"
+
+--00000000000081fa6b06313a0701
+Content-Type: text/plain; charset="UTF-8"
+
+*Dear HDFC Bank,*
+
+I have completed my loan payments and need a No Objection Certificate (NOC)
+for my records. Please share the NOC document at the earliest.
+
+   -
+
+   *Loan Account Number:* 5566778899
+   -
+
+   *Loan Closure Date:* 28th February 2024
+
+Best Regards,
+*Shreya Gupta*
++91 99887 66543
+
+--00000000000081fa6b06313a0701
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><p class="gmail-"><strong>Dear HDFC Bank,</strong></p>
+<p class="gmail-">I have completed my loan payments and need a No Objection Certificate (NOC) for my records. Please share the NOC document at the earliest.</p>
+<ul>
+<li class="gmail-">
+<p class="gmail-"><strong>Loan Account Number:</strong> 5566778899</p>
+</li>
+<li class="gmail-">
+<p class="gmail-"><strong>Loan Closure Date:</strong> 28th February 2024</p>
+</li>
+</ul>
+<p class="gmail-">Best Regards,<br>
+<strong>Shreya Gupta</strong><br>
++91 99887 66543</p></div>
+
+--00000000000081fa6b06313a0701--

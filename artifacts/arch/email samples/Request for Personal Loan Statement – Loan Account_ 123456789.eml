@@ -1,0 +1,141 @@
+Delivered-To: kala.rose2@gmail.com
+Received: by 2002:a05:7108:9f46:b0:402:6fdc:3351 with SMTP id mk6csp2768312gdb;
+        Wed, 26 Mar 2025 00:35:34 -0700 (PDT)
+X-Received: by 2002:a05:622a:2282:b0:476:76df:d26d with SMTP id d75a77b69052e-4771dd5d53emr292018531cf.8.1742974534184;
+        Wed, 26 Mar 2025 00:35:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742974534; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Liz6A9Xv6/p/ECiQihK3chRJXMcw4PNs246QgiIRs/Qbp4F3ZcHo+Jdt7eAHwvzBKV
+         HqKf3oTBJoLJ25ij1Rw5hLizrIbUVO1gbt0dSQsGbhw4eoNrTTBdex5aoDh+/h/ssBNa
+         8y8YVxAe/C6ZRdrEOVe2mToS0bVn3bpiywWuvgSM0na8qW/KY0GH3CcsmiCBmsuT4/GY
+         0BOaH9NDbUdVTXQsRlVopwAq4TPzwRl0OhJRPbNJNBeg+Q+LJKLN7j6SR4kNY3DXCWeR
+         hIOG5p4CzWdCXQioG0iyhz09BIQCIWh/crr7J8YxjEEdOrnzevtE38zfPMORZntGwJQZ
+         XFIA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=/+ZxF548lI1oler6oyqKUlLpnfpYQjqlhfxc5pBUA9Y=;
+        fh=ChtLNO6yL9eK/GIjE0GuVk6QzYBbLd51TcfFO6NDXoo=;
+        b=FqHGgLJSP8CMqg6QTzIU+eDNiW6O29Y6xssN49vOIk/327jfZ7eR+dcUV9/eEl3Xsy
+         LGe57nXxKMvCRGny1zUnbHC3yOallO5l9kwH1mUws8dMB/93YoC5B4samvqf+RKvIBxS
+         jB5xTCXiIuIbR2RYPp0wSKuNfbKW+WDNtqmb6TE5nPKSzA0jdbrtll3O7T16tbQlYY0C
+         B4NTzLs8CwASyZG9wLXlaoaPr/xY3HkV44V0pe5UG+BhOCCt3sMm7BhnvEB7NIZEuJ+i
+         MMAO3Sg/uBR0m09urhFZWOF0wVRr/mioOmzU+HPyFDTThPZY/Q0l6SFN30loGi3UJvjx
+         Ryng==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="bmE/4u7Z";
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <saipraveen.a.iiit@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4771d1bc260sor120655771cf.4.2025.03.26.00.35.34
+        for <kala.rose2@gmail.com>
+        (Google Transport Security);
+        Wed, 26 Mar 2025 00:35:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="bmE/4u7Z";
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742974533; x=1743579333; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=/+ZxF548lI1oler6oyqKUlLpnfpYQjqlhfxc5pBUA9Y=;
+        b=bmE/4u7ZsbJzWDpTRtdiduy17/EFWzJlXnUBmFj14dO4AfYfMMYh8nI11GUMsmyCLA
+         WeX5e6wKgtXKB/9Y2BORAbWehWr5kFUE17KDaLYR/XiFQbqLYGBse4zXU/odqcRJ/D2/
+         R5moJAu7xRDz07TaHb6jJ9Qv1eQvrvPwzgPxPd4rSL/7uEqTBy19l+KKZ51yrmft8buD
+         pNB8iXFUjvDpUcY711pBGFGn5OSI7gVE9vabkBHITyWJSUlk6BURjEWGrFnhb41ysfOQ
+         OpUbT8TlHBBrRdsjdkzu/D//Cmj/EBdck3FiIiyft8bfpWPha9LsqMhOQ0dCun4XFlbr
+         IPcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742974533; x=1743579333;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=/+ZxF548lI1oler6oyqKUlLpnfpYQjqlhfxc5pBUA9Y=;
+        b=pdVLDP+uVyd3xCHwYIfIrRzQfLdb8EkcxuRIFGXCZtPXX4vNooEiTxKcLU3XFARuG+
+         9vQlysM+M5p/SzcLIfdRWC9ZLQrbseQNFF/LwAjKWOyr/LiZs7FzBFRA7NVUG2c0mV1e
+         2G7zlHKEIY4ZS1mTCQagJShL7nK2NXf/e5XEoHn+39u8xO2jxs2V7ozBo8F603ivJyEL
+         andmgDUjAt/iOW+UKepEG8BSwKmxf2CjvA1F3hysrn82JBPl7tjkNROMeSmoh0wBC49/
+         EsuiDPDmvMGDX8a8rKmvUZNLPcDwrQHhf/2Cf309t3sZIibJsGJxvVixLGt155Z6PVoI
+         TdEQ==
+X-Gm-Message-State: AOJu0YyxyoKQB1ccwUPV2cOvUzAO2qX8mrk1XiZqsEnST0aX3D+TMoqP
+	NOpTsNwMmIPC5Nuqo+ggA21N0PieHOTLAvJObn70wll8sk/aow9LhgxEm5AnK8/WLF62AMRcrm6
+	rZyoMJRE1hLrARM2y33DyggG0GXnjqzTTRp4=
+X-Gm-Gg: ASbGncu+XZkKG18wd9784QMZD0u4waaER/zVFbJoCRn7bDb9dVywLSCgLZiZ35Oswm3
+	RrNKXaH6i5dNVnFIKFTAuOUjEj0N760U8qKoYO1xBLzawmi3u7z/qwzQm77YWE25PyQzuJz2xxD
+	jQ4h5Fb8H0mscSH2MvWyTAacLxCdo8c464R6egwDSBMFo38B1F7JDlclWqZWypbEa3A+oT
+X-Google-Smtp-Source: AGHT+IE/fFDtRI5NByGKa2BO7iBnax+6pBlH8ZC7tnJgjLuZCQ5WnYi6ZCdpsMIA6JFovlfokzATRfXIvsaxFSae0Ls=
+X-Received: by 2002:ac8:7558:0:b0:476:a969:90c5 with SMTP id
+ d75a77b69052e-4771dd95074mr196853711cf.24.1742974533518; Wed, 26 Mar 2025
+ 00:35:33 -0700 (PDT)
+MIME-Version: 1.0
+From: Sai Praveen <saipraveen.a.iiit@gmail.com>
+Date: Wed, 26 Mar 2025 13:05:22 +0530
+X-Gm-Features: AQ5f1JoBZuxDGIGisWYX8EZ2rdQwAspdJq3TkAFxqejxN7H8_HUilTgoxuLdhqM
+Message-ID: <CACyWkX4NOYQEqy-3z6JOsA5dMc20V-EZo99p5TuTwti9uJn3tg@mail.gmail.com>
+Subject: =?UTF-8?Q?Request_for_Personal_Loan_Statement_=E2=80=93_Loan_Account?=
+	=?UTF-8?Q?=3A_123456789?=
+To: Divya Kala <kala.rose2@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000ec4c8b063139e13a"
+
+--000000000000ec4c8b063139e13a
+Content-Type: text/plain; charset="UTF-8"
+
+Dear HDFC Bank Loans Team,
+
+I hope you are doing well. I would like to request a detailed loan
+statement for my personal loan account 123456789 for the last 12 months.
+Please provide the statement in PDF format at your earliest convenience.
+
+Loan Details:
+
+   -
+
+   *Loan Account Number:* 123456789
+   -
+
+   *Registered Mobile Number:* 9876543210
+   -
+
+   *Email ID:* john.doe@email.com
+
+Let me know if any further details are required.
+
+Thanks & Regards,
+*John Doe*
+9876543210
+
+--000000000000ec4c8b063139e13a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><h3 class=3D"gmail-"><span style=3D"font-size:small;font-w=
+eight:normal">Dear HDFC Bank Loans Team,</span></h3><h3 class=3D"gmail-">
+<p class=3D"gmail-"><span style=3D"font-weight:normal">I hope you are doing=
+ well. I would like to request a detailed loan statement for my personal lo=
+an account 123456789 for the last 12 months. Please provide the statement i=
+n PDF format at your earliest convenience.</span></p>
+<p class=3D"gmail-">Loan Details:</p>
+<ul>
+<li class=3D"gmail-">
+<p class=3D"gmail-"><strong>Loan Account Number:</strong> 123456789</p>
+</li>
+<li class=3D"gmail-">
+<p class=3D"gmail-"><strong>Registered Mobile Number:</strong> 9876543210</=
+p>
+</li>
+<li class=3D"gmail-">
+<p class=3D"gmail-"><strong>Email ID:</strong> <a rel=3D"noopener">john.doe=
+@email.com</a></p>
+</li>
+</ul>
+<p class=3D"gmail-"><span style=3D"font-weight:normal">Let me know if any f=
+urther details are required.</span></p>
+<p class=3D"gmail-">Thanks &amp; Regards,<br>
+<strong>John Doe</strong><br>
+9876543210</p></h3></div>
+
+--000000000000ec4c8b063139e13a--

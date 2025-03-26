@@ -34,8 +34,8 @@ async def upload_file(file: UploadFile = File(...)):
         "filename": file.filename,
         "content_type": file.content_type,
         "message": "File uploaded successfully",
-        "category": result["category"],
-        "subCategory": result["subcategory"],
+        "request type": result["category"],
+        "sub request type": result["subcategory"],
         "keyPhrases": result["key_phrases"],
         "confidence": result["confidence"],
         "urgency": result["urgency"]

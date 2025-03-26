@@ -1,0 +1,126 @@
+Delivered-To: kala.rose2@gmail.com
+Received: by 2002:a05:7108:9f46:b0:402:6fdc:3351 with SMTP id mk6csp2771344gdb;
+        Wed, 26 Mar 2025 00:45:01 -0700 (PDT)
+X-Received: by 2002:a05:6214:1c0e:b0:6ea:d393:962a with SMTP id 6a1803df08f44-6eb3f27d77dmr274085466d6.1.1742975101784;
+        Wed, 26 Mar 2025 00:45:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742975101; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LejlW3GQ5viovaaFau4WKcp6wcKzUFCgIC2M2wDiMjM97vycJDHYhgsqx7CI8h00Zw
+         /ZSaH45g04jTms5vzc1Mp03SQCb8h45l2ZSmLLzZ10rNUOLuuT1ac2aBBEwGOxKlYPJL
+         bEBXi+8SRXwAaBfN8nUR/XjOfaUcJa/Om+OVdZqBh120IacgY51k+o4uP/WQHj//GykW
+         orRzI1xRVTe1ZPR23yzEQt6d45iDAQam9X2QSfyxxfLyeF205Tkj0Venoz62IM/YcAio
+         cx6Ee8NKJxV5judB2yTybmyGHznQiXmp4JugdJZbpkoHQkyQKHgHJEMFyzAGlYBnoVJu
+         g2MQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=DTMZRzH6ZnZmqNA+hKkOhGrrmcV5cAEFFOuczQk7vKA=;
+        fh=ChtLNO6yL9eK/GIjE0GuVk6QzYBbLd51TcfFO6NDXoo=;
+        b=AWFnRbIajzGI+4Xo7LZl/RnfDytnAZbW/CUTZ29GfBKRmW/dez/Uo9kHaxIRUB6C8v
+         3q58rAEnBenZu8RX8mXrHgBYbF1wviBpos0dp4UQcnTF6UA608FTCKEcklBy126QAPjH
+         10MOv0yWWwV4Uvj4Goqky8MK2Gsf8UI90QcNcG/Ndnjn22UOd4oE9UWUcUduFjWLbAzN
+         d0O1Qn6jD+wvSqm0qmUIMcIAbK64YZAYNZ1dSqopnz6WoZsv8kt4aKAF10hBPxv3Bkri
+         eLnQjY7BssaV91YoIAVbDmmnRwCRmjr7gtJbPPnWoVoaxXJvx2BvjhJq6E3UYp/vnCo4
+         VVwQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lBlEcAYL;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <saipraveen.a.iiit@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 6a1803df08f44-6eb3efa37c0sor75849166d6.5.2025.03.26.00.45.01
+        for <kala.rose2@gmail.com>
+        (Google Transport Security);
+        Wed, 26 Mar 2025 00:45:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lBlEcAYL;
+       spf=pass (google.com: domain of saipraveen.a.iiit@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=saipraveen.a.iiit@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742975101; x=1743579901; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=DTMZRzH6ZnZmqNA+hKkOhGrrmcV5cAEFFOuczQk7vKA=;
+        b=lBlEcAYLe8IUJoMF+7K2NGLIOPJKvoniQo/VG53r/KEvAJhT9oItMjhp9GXu7No9b7
+         PrZMyelKcdUJ88U75ViEhLCJ+2jNH6GTWGioZHP01t5wZumCyWakX/dgP4JT8RT2G+Mw
+         9wJG6vBk2gYoz9Xt9vaOlpbnUvtTXdxDEUgzWu2QVbqzjaQ1T7XdZiZ0B3hZUJ/zzSYA
+         58t883JLOWI7l0klptRYLmBsuOHKOe0ArcfI1aeJooi4DDR5dCr+zvT2oWzFYo48iWUw
+         GoXs7OP9Z0qMLE75DjjF+kz9x3qsnrjV3RZ2IsofqDpyiXMoWvirMZQXXVNwXC0u9dkq
+         Izmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742975101; x=1743579901;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DTMZRzH6ZnZmqNA+hKkOhGrrmcV5cAEFFOuczQk7vKA=;
+        b=xUuMc2reMUJ8s3pv/cbbrFD4XLtHXxuWxga03aEz3S+0Y8mLBf1qtSd4OJtc75g4Kf
+         lQS9+wOw8iznwfaHLVtU20/QpfjAv1BHuGCehIMlk2KKxw2Lfbd6L4JuBA8uEaMxJWoZ
+         B3W5uFKT1LzdDI7lb3iYHp6+dJgI2PSiLTZ8OeQs0nQA1bdUD5Z2xw2IFHIl7tlJshCQ
+         q7ReP2oCeJN9rC6/CeCg6qgAxsV3ZevPMoeN3bpHnqRG5eaLGlfT0GOyQciTLdU7aGeq
+         FtDZrSxyOUYm8KzpC2A9QK/DuEOnJbEvCfrmO0tAOnJcTNEZoodJu5dq9/gNlIBaFjYc
+         zCSw==
+X-Gm-Message-State: AOJu0YzDD3/cEPrzJ2xsGJVpOikSVbbXmVxmOHWCx4jA9N9pLmOo7+L0
+	uD0c1y6fI/NwioHscfHF6yjZYSPLHi8Gi3NZ61fJWUCBD2fj7QrHASWHOvDZ7d6s6aAlzrl0B2u
+	yMsgrf8AYFLASx1iLaQU7Euj++sOH7zMdZao=
+X-Gm-Gg: ASbGncsXfciLHKRh44O+BpYpxBIkNAl5xG8WdtxqyaupFm9cl1LJgx+MXZCux7F79lR
+	Jjt3VuEkmNw+EYz7s+E1zTjVQqX886rBw7vXagRzNqJ6TGFS0apmSRUwHD1ToN1mlFnUgtCO3Jl
+	+xoR/3cgqOVB1kO1xWLIT3kqRQyiEbb5Chy3H9vRJ21aknIlEdlyVbYgQVwHn+FqVpesSK
+X-Google-Smtp-Source: AGHT+IFo1AviVAdDKYhKdp005CfVpUqHhJnFVXIpD2a2YwBuRqfPjjhcyOK55hLPFZ2FoyMzYCmQPlqXwxJrvykhry0=
+X-Received: by 2002:a05:6214:b6b:b0:6e6:68e3:8d84 with SMTP id
+ 6a1803df08f44-6eb3f2c3d62mr351587166d6.18.1742975101099; Wed, 26 Mar 2025
+ 00:45:01 -0700 (PDT)
+MIME-Version: 1.0
+From: Sai Praveen <saipraveen.a.iiit@gmail.com>
+Date: Wed, 26 Mar 2025 13:14:49 +0530
+X-Gm-Features: AQ5f1Jr6noea0KoCyA6W03lbZ2A0OK_014SkYzOQpD9RYsIz0zMGGPZ-ryrXC4w
+Message-ID: <CACyWkX42mykhqyNDJFFT+7RPDPgpzELCs2a9ouyY4n-OpCutXA@mail.gmail.com>
+Subject: =?UTF-8?Q?Subject=3A_Loan_Tenure_Extension_Request_=E2=80=93_Loan_Acco?=
+	=?UTF-8?Q?unt_1122334455?=
+To: Divya Kala <kala.rose2@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000c0e3bb06313a03a1"
+
+--000000000000c0e3bb06313a03a1
+Content-Type: text/plain; charset="UTF-8"
+
+*Dear HDFC Bank,*
+
+Due to financial constraints, I would like to extend my loan tenure to
+reduce the monthly EMI. Please provide details on the available options.
+
+   -
+
+   *Loan Account Number:* 1122334455
+   -
+
+   *Current Tenure:* 5 years
+   -
+
+   *Requested Tenure:* 7 years
+
+Best Regards,
+*Rohit Patel*
++91 98765 43211
+
+--000000000000c0e3bb06313a03a1
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><p class="gmail-"><strong>Dear HDFC Bank,</strong></p>
+<p class="gmail-">Due to financial constraints, I would like to extend my loan tenure to reduce the monthly EMI. Please provide details on the available options.</p>
+<ul>
+<li class="gmail-">
+<p class="gmail-"><strong>Loan Account Number:</strong> 1122334455</p>
+</li>
+<li class="gmail-">
+<p class="gmail-"><strong>Current Tenure:</strong> 5 years</p>
+</li>
+<li class="gmail-">
+<p class="gmail-"><strong>Requested Tenure:</strong> 7 years</p>
+</li>
+</ul>
+<p class="gmail-">Best Regards,<br>
+<strong>Rohit Patel</strong><br>
++91 98765 43211</p></div>
+
+--000000000000c0e3bb06313a03a1--
